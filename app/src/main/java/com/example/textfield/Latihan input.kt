@@ -34,6 +34,7 @@ fun LatihanInput(
     var alamat by remember { mutableStateOf("") }
     var notelepon by remember { mutableStateOf("")}
     var gender by remember { mutableStateOf("") }
+
     var datagender = listOf("laki-laki", "perempuan")
 
     var confNama by remember { mutableStateOf("") }
@@ -107,14 +108,16 @@ fun LatihanInput(
             confAlamat = alamat
             confNotelepon = notelepon
             confGender = gender
-        }) {
+        })
+
+        {
             Text(text = "simpan")
         }
         TampilData(x = "nama", y = confNama)
         TampilData(x = "email", y = confEmail)
         TampilData(x = "alamat", y = confAlamat)
         TampilData(x = "notelepon", y = confNotelepon)
-        TampilData(x = "datagender", y = gender)
+        TampilData(x = "datagender", y = confGender)
     }
 }
 
